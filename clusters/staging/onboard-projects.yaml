@@ -5,7 +5,7 @@ metadata:
   name: projects
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 1h
   path: ./projects/staging
   prune: true
   sourceRef:

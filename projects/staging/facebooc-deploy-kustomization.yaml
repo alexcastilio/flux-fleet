@@ -6,4 +6,4 @@ metadata:
   namespace: facebooc
 spec:
   path: ./flux/staging
-
+  prune: true

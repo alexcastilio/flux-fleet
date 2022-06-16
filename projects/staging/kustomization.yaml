@@ -4,7 +4,7 @@ resources:
   - ../base/facebooc
   - ../base/instavote
   - ../base/monitoring
-patchesStrategicMerge:
+patches:
   - facebooc-deploy-kustomization.yaml
   - instavote-deploy-kustomization.yaml 
   - monitoring-deploy-kustomization.yaml

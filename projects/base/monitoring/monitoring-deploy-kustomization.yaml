@@ -1,14 +1,31 @@
 ---
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+#apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+#kind: Kustomization
+#metadata:
+#  name: monitoring-deploy
+#  namespace: flux-system
+#spec:
+#  interval: 1h
+#  path: ./flux
+#  prune: false
+#  serviceAccountName: monitoring
+#  sourceRef:
+#    kind: GitRepository
+#    name: monitoring-deploy
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: monitoring-deploy
+  labels:
+    kustomize.toolkit.fluxcd.io/name: monitoring-deploy
+    kustomize.toolkit.fluxcd.io/namespace: flux-system
+  name: monitoring
   namespace: flux-system
 spec:
-  interval: 1h
-  path: ./flux
-  prune: false
-  serviceAccountName: monitoring
+  interval: 1h0m0s
+  path: ./manifests/monitoring
+  prune: true
+  #retryInterval: 1s
   sourceRef:
     kind: GitRepository
-    name: monitoring-deploy
+    name: monitoring
+  timeout: 2m0s

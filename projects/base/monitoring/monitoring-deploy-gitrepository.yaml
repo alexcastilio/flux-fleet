@@ -3,7 +3,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
   name: monitoring-deploy
-  namespace: monitoring
+  namespace: flux-system
 spec:
   interval: 1h
   ref:
